@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Randevy.Views;assembly=Randevy"
+             x:Class="Randevy.Views.LoginView">
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            
+
+             <Label Text="Email" />
+
+             <Entry Text="{Binding Login.Email}" 
+                    Keyboard="Email"
+                    Placeholder="Email"/>
+
+             <Label Text="Password" />
+
+             <Entry Text="{Binding Login.Password}" 
+                    Placeholder="Password" 
+                    IsPassword="True"/> 
+
+             <Button Text="Login" 
+                    Command="{Binding LoginCommand}"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</views:BaseContentPage>

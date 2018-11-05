@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Randevy.Views;assembly=Randevy"
+             views:Title="Randevy"
+             x:Class="Randevy.Views.MainView">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ItemContainer" TargetType="FlexLayout">
+        <Setter Property="WidthRequest" Value="100"></Setter>
+        <Setter Property="HeightRequest" Value="100"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="Direction" Value="Column"></Setter>
+        <Setter Property="JustifyContent" Value="SpaceAround"></Setter>
+        <Setter Property="AlignItems" Value="Center"></Setter>
+      </Style>
+
+      <Style x:Key="Round" TargetType="Frame">
+        <Setter Property="WidthRequest" Value="75"></Setter>
+        <Setter Property="HeightRequest" Value="75"></Setter>
+        <Setter Property="CornerRadius" Value="75"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="BackgroundColor" Value="LightSteelBlue"></Setter>
+        <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        <Setter Property="VerticalOptions" Value="Center"></Setter>
+      </Style>
+
+      <Style x:Key="ItemIcon" TargetType="Image">
+        <Setter Property="WidthRequest" Value="71"></Setter>
+        <Setter Property="HeightRequest" Value="71"></Setter>
+        <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        <Setter Property="VerticalOptions" Value="Center"></Setter>
+      </Style>
+
+      <Style x:Key="ItemLabel" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="Small"></Setter>
+      </Style>
+    </ResourceDictionary>
+      <!-- <StyleSheet Source="../Style.css"></StyleSheet> -->
+  </ContentPage.Resources>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Order="Primary" Icon="menu.png"  />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+
+    <FlexLayout Direction="Row"
+                JustifyContent="SpaceAround"
+                AlignContent="Start"
+                AlignItems="Center"
+                Wrap="Wrap">
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="users.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="Users" Style="{StaticResource ItemLabel}"/>
+        <FlexLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding OnTapUsers}"></TapGestureRecognizer>
+        </FlexLayout.GestureRecognizers>
+      </FlexLayout>
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="user.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="User" Style="{StaticResource ItemLabel}"/>
+        <FlexLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding OnTapUser}"></TapGestureRecognizer>
+        </FlexLayout.GestureRecognizers>
+      </FlexLayout>
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="doctor.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="Test" Style="{StaticResource ItemLabel}"/>
+      </FlexLayout>
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="doctor.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="Test" Style="{StaticResource ItemLabel}"/>
+      </FlexLayout>
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="chat.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="Chat" Style="{StaticResource ItemLabel}"/>
+      </FlexLayout>
+
+      <FlexLayout Style="{StaticResource ItemContainer}">
+        <Frame Style="{StaticResource Round}">
+          <Image Source="logout.png"  Style="{StaticResource ItemIcon}"></Image>
+        </Frame>
+        <Label Text="Log out" Style="{StaticResource ItemLabel}"/>
+
+      </FlexLayout>
+
+
+      <!-- <Frame CornerRadius="100" -->
+      <!--        WidthRequest="100" -->
+      <!--        HeightRequest="100" -->
+      <!--        BorderColor="LightSkyBlue" -->
+      <!--        BackgroundColor="LightBlue" -->
+      <!--        Padding="0"> -->
+      <!--      -->
+      <!--     <StackLayout WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="AntiqueWhite"> -->
+      <!--          -->
+      <!--     </StackLayout> -->
+      <!-- </Frame> -->
+
+
+      <!-- <StackLayout WidthRequest="100" HeightRequest="100" BackgroundColor="LightSkyBlue" > -->
+      <!--     <Frame WidthRequest="50" HeightRequest="50" CornerRadius="50" Padding="0" VerticalOptions="Center" HorizontalOptions="Center"> -->
+      <!--         <Image Source="doctor.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image> -->
+      <!--     </Frame> -->
+      <!--     <Label Text="Test" HorizontalTextAlignment="Center"></Label> -->
+      <!-- </StackLayout> -->
+
+    </FlexLayout>
+
+  </ContentPage.Content>
+
+</views:BaseContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Randevy.Views;assembly=Randevy"
+             views:Title="Doctors"
+             x:Class="Randevy.Views.UsersView">
+
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <FlexLayout Direction="Row" 
+                        AlignItems="Center">
+
+                <Entry Text="{Binding Search}" 
+                       Keyboard="Text"
+                       FlexLayout.Basis="90%"
+                       Placeholder="Search"/>
+
+                <Image Source="search.png" 
+                       FlexLayout.Basis="10%"
+                       HeightRequest="50" 
+                       WidthRequest="50">
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer  Command="{Binding Searching}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </FlexLayout>
+
+            <ListView ItemsSource="{Binding Users}" RowHeight="100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="10">
+                                    <FlexLayout Direction="Row" 
+                                        AlignItems="Center" 
+                                        JustifyContent="SpaceBetween">
+                
+                                        <Image Source="doctor.png" HeightRequest="50" WidthRequest="50" />
+                                        <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Image Source="chat.png" HeightRequest="50" WidthRequest="50" />
+                                    </FlexLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</views:BaseContentPage>

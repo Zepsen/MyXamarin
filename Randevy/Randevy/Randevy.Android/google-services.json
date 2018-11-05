@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "503402496486",
+    "firebase_url": "https://randevy-b9d3c.firebaseio.com",
+    "project_id": "randevy-b9d3c",
+    "storage_bucket": "randevy-b9d3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503402496486:android:e5cec62a25a91a0c",
+        "android_client_info": {
+          "package_name": "com.nvcoding.Randevy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503402496486-dradmqinggfn35ogq7pm2n3fae5d3972.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nvcoding.Randevy",
+            "certificate_hash": "6b0b9618af1fef69e332ceb3bcb7afba78da6de5"
+          }
+        },
+        {
+          "client_id": "503402496486-a6clgclkv90h96noudmgpvvtosb0k5qr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrucVo69svoKibHLnVPE8tU8-8h9X3T8g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503402496486-a6clgclkv90h96noudmgpvvtosb0k5qr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
