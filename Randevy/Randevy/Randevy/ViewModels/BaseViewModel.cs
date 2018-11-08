@@ -28,8 +28,7 @@ namespace Randevy.ViewModels
         #endregion
 
         #region -- INavigationAware implementation --
-
-
+        
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
 

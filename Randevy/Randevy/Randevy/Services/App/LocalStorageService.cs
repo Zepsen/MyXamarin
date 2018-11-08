@@ -18,7 +18,7 @@ namespace Randevy.Services.App
 
         public T Load<T>(string key)
         {
-            var str = _settings.GetValueOrDefault(key, default(string));
+            var str = _settings.GetValueOrDefault(key, "");
             return JsonConvert.DeserializeObject<T>(str);
         }
 

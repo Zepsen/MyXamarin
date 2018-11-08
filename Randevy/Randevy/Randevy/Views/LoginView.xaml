@@ -6,23 +6,44 @@
              x:Class="Randevy.Views.LoginView">
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-            
+        <StackLayout Margin="20" 
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="FillAndExpand">
 
-             <Label Text="Email" />
+            <Label Text="Welcome!"
+                   TextColor="DodgerBlue"
+                   HorizontalTextAlignment="Center"
+                   FontSize="32"/>
 
-             <Entry Text="{Binding Login.Email}" 
-                    Keyboard="Email"
-                    Placeholder="Email"/>
+            <Label Text="Email" />
+            <Entry x:Name="EmailLabel" 
+                   Text="{Binding Login.Email}" 
+                   Keyboard="Email"
+                   Placeholder="Email">
 
-             <Label Text="Password" />
+            </Entry>
 
-             <Entry Text="{Binding Login.Password}" 
-                    Placeholder="Password" 
-                    IsPassword="True"/> 
+            <Label Text="Password" />
+            <Entry Text="{Binding Login.Password}" 
+                   Placeholder="Password" 
+                   IsPassword="True"/>
 
-             <Button Text="Login" 
+            <Button Text="Login" 
                     Command="{Binding LoginCommand}"></Button>
+
+            <ActivityIndicator Color="DodgerBlue"
+                               IsVisible="{Binding Load}" 
+                               IsRunning="{Binding Load}"/>
+
+            <Frame IsVisible="{Binding Valid}" 
+                   BackgroundColor="LightPink"
+                   BorderColor="IndianRed">
+                    
+                <Label HorizontalTextAlignment="Center"
+                       FontSize="22"
+                       TextColor="IndianRed"
+                       Text="{Binding ErrMessage}"/>
+            </Frame>
 
 
         </StackLayout>

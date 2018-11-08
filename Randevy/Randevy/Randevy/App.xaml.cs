@@ -1,4 +1,5 @@
-﻿using Acr.UserDialogs;
+﻿using System.Net;
+using Acr.UserDialogs;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Prism.Unity;
@@ -24,13 +25,11 @@ namespace Randevy
         {
             return (Current as App).Container.Resolve<T>();
         }
-      
+
 
         public App()
         {
             InitializeComponent();
-
-            
         }
 
         protected override void OnStart()
@@ -42,7 +41,7 @@ namespace Randevy
         {
             // Handle when your app sleeps
         }
-        
+
         protected override void OnResume()
         {
             // Handle when your app resumes
@@ -83,14 +82,16 @@ namespace Randevy
             _localStorageService = Resolve<ILocalStorageService>();
 
             var token = _localStorageService.Load<string>(Constants.StorageKeys.Token);
-            if (token.IsNotNullOrEmpty())
-                await NavigationService.NavigateAsync("/" + string.Join("/", nameof(NavigationPage), nameof(MainView)));
-            else 
+            if (!token.IsNotNullOrEmpty())
                 await NavigationService.NavigateAsync("/" + string.Join("/", nameof(NavigationPage), nameof(LoginView)));
+            else
+            {
+                await NavigationService.NavigateAsync("/" + string.Join("/", nameof(NavigationPage), nameof(MainView)));
+            }
         }
 
 
-    #endregion
+        #endregion
 
-}
+    }
 }

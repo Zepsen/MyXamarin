@@ -2,7 +2,7 @@
 {
     public static class Constants
     {
-        public const string BaseUrl = "http://10.0.3.2:54709/";
+        public const string BaseUrl = "http://10.0.2.2:54709/";
 
         public static class StorageKeys
         {
